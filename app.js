@@ -8,11 +8,12 @@ bling.textContent = "BLING!";
 bling.style.cssText = "text-align:center; font-weight: bold ;text-shadow: 2px 1px #FF6347; font-size: 1.2rem;";
 root.appendChild(bling);
 
-
+root.style.backgroundColor = '#FFFAFA';
 
 const divRoot = document.createElement('div');
 divRoot.style.display = "flex";
 root.appendChild(divRoot);
+
 
 /* Create div element for the contents */
  
@@ -78,6 +79,7 @@ selector.addEventListener('click', (event)=>{
     root.style.backgroundColor = "#FFFAFA";
 })
 
+
 /* some set of color names and hex values for reference */
 
 /* 
@@ -96,6 +98,7 @@ PaleGreen - #98FB98
 */
 
 /* loop for options */
+
 
 
 let color = {
@@ -120,9 +123,27 @@ let color = {
     const nod = document.createTextNode(col);
     opt.appendChild(nod);
     selector.appendChild(opt);
-}
+    }
 
- /* create radio buttons */
+    /* function for root  background color */
+
+    const changeColor = (e) => {
+
+        root.style.backgroundColor = e.target.value;
+
+    }
+    
+    
+    selector.onchange = changeColor;
+
+
+ 
+
+
+
+
+
+ /* create radio buttons  blob and nope*/
 
 
  const radioDiv = document.createElement("div");
@@ -151,6 +172,9 @@ let color = {
  radioDiv.appendChild(nopespan);
 
 
+
+
+
  /* add camera button icon*/ 
 
  const camera = document.createElement("button");
@@ -162,6 +186,11 @@ let color = {
  camera.style.backgroundColor = 'white';
  camera.style.backgroundSize = 'contain';
  camera.style.backgroundRepeat = 'no-repeat';
+
+
+
+
+
 
 
 
@@ -187,28 +216,41 @@ divRoot.appendChild(rightDiv);
 
 
 
+
+  /* div for image */
+
   const imgDiv = document.createElement('div');
+  imgDiv.style.width = '50%';
+  imgDiv.style.height = '100px';
   rightDiv.appendChild(imgDiv);
 
 
 
   
 /* function for displaying images */
+
+const imgs = document.createElement('img');
+imgs.style.width = '100%';
+imgs.style.height = '100%';
+imgs.style.objectFit = 'cover';
+imgDiv.appendChild(imgs);
 polaroid.addEventListener("click", (event) => {
-    imgDiv.innerHTML = "<img src = './assets/images/polaroid.png'/>";
+    imgs.src = './assets/images/polaroid.png';
+
 })
 
 fallGuy.addEventListener("click", (event) => {
-    imgDiv.innerHTML = "<img src = './assets/images/fall-guy-01.png'/>";
+    imgs.src = './assets/images/fall-guy-01.png';
 })
 radio.addEventListener("click", (event) => {
-    imgDiv.innerHTML = "<img src = './assets/images/radio-02.png'/>";
+    imgs.src = './assets/images/radio-02.png';
 })
 
 traitor.addEventListener("click", (event)=>{
-    imgDiv.innerHTML = "<img src = './assets/images/among-us.png'/>";
+    imgs.src = './assets/images/among-us.png';
 })
 
 tv.addEventListener("click", (event)=>{
-    imgDiv.innerHTML = "<img src = './assets/images/tv.png'/>";
+    
+    imgs.src = './assets/images/tv.png';
 })
