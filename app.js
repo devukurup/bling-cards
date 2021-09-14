@@ -10,7 +10,7 @@ root.style.width = '100%';
 
 const bling = document.createElement('nav');
 bling.textContent = "BLING!";
-bling.style.cssText = "text-align:center; font-weight: bold ;text-shadow: 2px 1px #FF6347; font-size: 1.2rem;";
+bling.style.cssText = "text-align:center; font-weight: bold ;text-shadow: 2px 1px #FF6347; font-size: 2rem;";
 bling.style.padding = '2%';
 root.appendChild(bling);
 
@@ -36,14 +36,14 @@ divRoot.appendChild(divMain);
 const pOne = document.createElement('p');
 pOne.textContent = "Sizzle your life";
 divMain.appendChild(pOne);
-pOne.style.fontSize = '1.2em';
+pOne.style.fontSize = '2.5rem';
 pOne.style.fontWeight = '100';
 pOne.style.position = 'relative';
 pOne.style.top = '2px';
 
 const hOne = document.createElement('h2');
 hOne.textContent = "Make a Card";
-hOne.style.fontSize = '2.2rem';
+hOne.style.fontSize = '4.5rem';
 hOne.style.position = 'relative';
 hOne.style.top = '5%';
 hOne.style.fontWeight = '800';
@@ -230,7 +230,11 @@ divRoot.appendChild(rightDiv);
 
 
  const dynHeading = document.createElement('h1');
+ dynHeading.style.fontSize = '2rem';
+ dynHeading.style.fontWeight = '700';
+ dynHeading.style.textAlign = 'center';
  rightDiv.appendChild(dynHeading);
+
 
 
 
@@ -245,10 +249,12 @@ divRoot.appendChild(rightDiv);
   /* div for image */
  const blobDiv = document.createElement('div');
  rightDiv.appendChild(blobDiv);
-
+  blobDiv.style.position = 'relative';
+  blobDiv.style.top = '5%'
   const imgDiv = document.createElement('div');
-  imgDiv.style.width = '100%';
-  imgDiv.style.height = '300px';
+  imgDiv.style.width = '200px';
+  imgDiv.style.height = '200px';
+  imgDiv.style.border = 'none';
   blobDiv.appendChild(imgDiv);
 
 
@@ -259,7 +265,8 @@ divRoot.appendChild(rightDiv);
 const imgs = document.createElement('img');
 imgs.style.width = '100%';
 imgs.style.height = '100%';
-imgs.style.objectFit = 'cover';
+imgs.style.objectFit = 'contain';
+imgs.style.position = 'relative';
 imgDiv.appendChild(imgs);
 polaroid.addEventListener("click", (event) => {
     imgs.src = './assets/images/polaroid.png';
