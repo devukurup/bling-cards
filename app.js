@@ -21,6 +21,7 @@ document.body.style.backgroundColor = "#FFFAFA";
 const divRoot = document.createElement('div');
 divRoot.style.display = "flex";
 divRoot.style.justifyContent = 'space-between';
+divRoot.style.flexWrap = 'wrap';
 root.appendChild(divRoot);
 divRoot.style.padding = '5%';
 divRoot.style.margin = '5%';
@@ -441,6 +442,11 @@ sectionDiv.style.padding = '5%';
 sectionDiv.style.flexWrap = 'wrap';
 sectionDiv.style.justifyContent = 'space-around';
 sectionDiv.style.margin = '5%';
+
+
+/* create image shots */
+
+
 camera.addEventListener("click",(event=>{
     const section = document.createElement('div');
     section.style.margin = '5px';
@@ -454,6 +460,29 @@ camera.addEventListener("click",(event=>{
     section.style.flexDirection = 'column';
     section.style.justifyContent = 'center';
     sectionDiv.appendChild(section);
+
+    const close = document.createElement("button");
+    section.appendChild(close);
+    close.style.backgroundImage = "url('./assets/images/icon_delete.png')";
+    close.style.backgroundPosition = 'center';
+    close.style.width = '15px';
+    close.style.height = '15px';
+    close.style.padding = '15px';
+    close.style.margin = '10px';
+    close.style.backgroundColor = 'transparent';
+    close.style.border = 'none';
+    close.style.backgroundSize = '20px';
+    close.style.backgroundRepeat = 'no-repeat';
+    close.style.float = 'right';
+
+
+    close.addEventListener("click",(event) => {
+        event.target.parentNode.remove();
+    })
+
+
+
+
 
     const textSection = document.createElement('h1');
     textSection.style.fontSize = '2rem';
