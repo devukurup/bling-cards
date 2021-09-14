@@ -16,6 +16,7 @@ root.appendChild(bling);
 
 
 root.style.backgroundColor = '#FFFAFA';
+document.body.style.backgroundColor = "#FFFAFA";
 
 const divRoot = document.createElement('div');
 divRoot.style.display = "flex";
@@ -154,6 +155,7 @@ selector.style.boxShadow = "3px 4px 3px #000000";
 divTwo.appendChild(selector);
 selector.addEventListener('click', (event)=>{
     root.style.backgroundColor = "#FFFAFA";
+    document.body.style.backgroundColor = "#FFFAFA";
 })
 
 
@@ -207,6 +209,7 @@ let color = {
     const changeColor = (e) => {
 
         root.style.backgroundColor = e.target.value;
+        document.body.style.backgroundColor = e.target.value;
 
     }
     
@@ -320,6 +323,7 @@ divRoot.appendChild(rightDiv);
   const imgDiv = document.createElement('div');
   imgDiv.style.width = '250px';
   imgDiv.style.height = '250px';
+  imgDiv.style.display = 'flex';
   imgDiv.style.border = 'none';
   blobDiv.appendChild(imgDiv);
 
@@ -432,6 +436,54 @@ tv.addEventListener("click", (event)=>{
 
 const sectionDiv = document.createElement('div');
 root.append(sectionDiv);
+sectionDiv.style.display = 'flex';
+sectionDiv.style.padding = '5%';
+sectionDiv.style.flexWrap = 'wrap';
+sectionDiv.style.justifyContent = 'space-around';
+sectionDiv.style.margin = '5%';
+camera.addEventListener("click",(event=>{
+    const section = document.createElement('div');
+    section.style.margin = '5px';
+    section.style.marginTop = '15px';
+    section.style.height = '400px';
+    section.style.width = '300px';
+    section.style.border = '2px solid black';
+    section.style.boxShadow = "3px 4px 3px #000000";
+    section.style.backgroundColor = root.style.backgroundColor;
+    section.style.display = 'flex';
+    section.style.flexDirection = 'column';
+    section.style.justifyContent = 'center';
+    sectionDiv.appendChild(section);
+
+    const textSection = document.createElement('h1');
+    textSection.style.fontSize = '2rem';
+    textSection.style.fontWeight = '700';
+    textSection.style.margin = 'auto';
+    textSection.textContent = dynHeading.textContent;
+    section.appendChild(textSection);
+
+    const imgSectionDiv = document.createElement('div');
+    imgSectionDiv.style.margin = 'auto';
+    imgSectionDiv.style.width = '100%';
+    section.appendChild(imgSectionDiv);
+    imgSectionDiv.style.backgroundImage = blobDiv.style.backgroundImage;
+    imgSectionDiv.style.backgroundSize = '250px';
+    imgSectionDiv.style.backgroundRepeat = 'no-repeat';
+
+
+
+
+
+    const imgSection = document.createElement('img');
+    imgSection.src = imgs.src;
+    imgSection.style.width = '150px';
+    imgSection.style.height = '150px';
+    imgSection.style.margin = '18%';
+    imgSection.style.objectFit = 'contain';
+    imgSectionDiv.appendChild(imgSection);
+
+}))
+
 
 
 
@@ -454,6 +506,7 @@ const foot = document.createElement('footer');
 
 root.appendChild(foot);
 foot.style.display='flex';
+foot.style.flexWrap = 'wrap';
 foot.style.position = 'relative';
 foot.style.justifyContent= 'center';
 
