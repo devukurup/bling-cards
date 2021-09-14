@@ -254,3 +254,46 @@ tv.addEventListener("click", (event)=>{
     
     imgs.src = './assets/images/tv.png';
 })
+
+
+
+/* footer  */
+
+const foot = document.createElement('footer');
+root.appendChild(foot);
+foot.style.display='flex';
+
+const pheart = document.createElement('p');
+pheart.textContent = "🖤 Credits: ";
+foot.appendChild(pheart);
+
+const aPolaroid = document.createElement('a');
+const aFallGuy = document.createElement('a');
+const aTv = document.createElement('a');
+const aRadio = document.createElement('a');
+const aTraitor = document.createElement('a');
+ 
+aPolaroid.textContent = 'Polaroid';
+aFallGuy.textContent = 'Fall Guy';
+aTv.textContent = 'TV';
+aRadio.textContent = 'Radio';
+aTraitor.textContent = 'Traitor';
+
+aTraitor.style.textDecoration = "none";
+aFallGuy.style.textDecoration = "none";
+aTv.style.textDecoration = "none";
+aRadio.style.textDecoration = "none";
+aPolaroid.style.textDecoration = "none";
+
+aPolaroid.href = "#";
+aTv.href = "#";
+aTraitor.href = "#";
+aRadio.href = "#";
+aFallGuy.href = "#";
+
+
+foot.appendChild(aPolaroid);
+foot.appendChild(aTv);
+foot.appendChild(aFallGuy);
+foot.appendChild(aRadio);
+foot.appendChild(aTraitor);
