@@ -1,18 +1,29 @@
 let root = document.querySelector("#root");
 
 
+root.style.position = 'absolute';
+root.style.height = '100%';
+root.style.width = '100%';
+
+
 /* Create nav element */
 
 const bling = document.createElement('nav');
 bling.textContent = "BLING!";
 bling.style.cssText = "text-align:center; font-weight: bold ;text-shadow: 2px 1px #FF6347; font-size: 1.2rem;";
+bling.style.padding = '2%';
 root.appendChild(bling);
+
 
 root.style.backgroundColor = '#FFFAFA';
 
 const divRoot = document.createElement('div');
 divRoot.style.display = "flex";
+divRoot.style.justifyContent = 'space-between';
 root.appendChild(divRoot);
+divRoot.style.padding = '5%';
+divRoot.style.margin = '5%';
+
 
 
 /* Create div element for the contents */
@@ -25,16 +36,25 @@ divRoot.appendChild(divMain);
 const pOne = document.createElement('p');
 pOne.textContent = "Sizzle your life";
 divMain.appendChild(pOne);
-
+pOne.style.fontSize = '1.2em';
+pOne.style.fontWeight = '100';
+pOne.style.position = 'relative';
+pOne.style.top = '2px';
 
 const hOne = document.createElement('h2');
 hOne.textContent = "Make a Card";
+hOne.style.fontSize = '2.2rem';
+hOne.style.position = 'relative';
+hOne.style.top = '5%';
+hOne.style.fontWeight = '800';
 divMain.appendChild(hOne);
 
 
 const divOne = document.createElement('div');
 divOne.style.cssText = "display: flex;";
 divMain.appendChild(divOne);
+divOne.style.position = 'relative';
+divOne.style.top = '20%';
 
 
 /* adding set of buttons  for div one*/
@@ -65,6 +85,9 @@ divOne.appendChild(radio);
 const divTwo = document.createElement('div');
 divTwo.style.cssText = "display:flex;";
 divMain.appendChild(divTwo);
+
+divTwo.style.position = 'relative';
+divTwo.style.top = '25%';
 
 const inp = document.createElement("Input");
 inp.setAttribute("type","text");
@@ -188,7 +211,8 @@ let color = {
  camera.style.backgroundSize = 'contain';
  camera.style.backgroundRepeat = 'no-repeat';
 
-
+ camera.style.position = 'relative';
+ camera.style.top = '30%';
 
 
 
@@ -223,8 +247,8 @@ divRoot.appendChild(rightDiv);
  rightDiv.appendChild(blobDiv);
 
   const imgDiv = document.createElement('div');
-  imgDiv.style.width = '50%';
-  imgDiv.style.height = '100px';
+  imgDiv.style.width = '100%';
+  imgDiv.style.height = '300px';
   blobDiv.appendChild(imgDiv);
 
 
@@ -315,6 +339,7 @@ const blobChange = () => {
     {
         blobDiv.style.backgroundImage = "url('./assets/images/blob.png')";
         console.log('blob here');
+
     }
 }
 blob.onchange = blobChange;
