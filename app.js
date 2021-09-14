@@ -165,6 +165,7 @@ let color = {
  nope.setAttribute("type","radio");
  nope.setAttribute("name","rad");
  nope.setAttribute("value","nope");
+ nope.checked = 'true';
  radioDiv.appendChild(nope);
 
  const nopespan = document.createElement("span");
@@ -218,11 +219,13 @@ divRoot.appendChild(rightDiv);
 
 
   /* div for image */
+ const blobDiv = document.createElement('div');
+ rightDiv.appendChild(blobDiv);
 
   const imgDiv = document.createElement('div');
   imgDiv.style.width = '50%';
   imgDiv.style.height = '100px';
-  rightDiv.appendChild(imgDiv);
+  blobDiv.appendChild(imgDiv);
 
 
 
@@ -297,3 +300,21 @@ foot.appendChild(aTv);
 foot.appendChild(aFallGuy);
 foot.appendChild(aRadio);
 foot.appendChild(aTraitor);
+
+
+
+
+
+
+/* blob nope function */
+
+
+
+const blobChange = () => {
+    if(blob.checked)
+    {
+        blobDiv.style.backgroundImage = "url('./assets/images/blob.png')";
+        console.log('blob here');
+    }
+}
+blob.onchange = blobChange;
