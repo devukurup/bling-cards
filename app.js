@@ -1,5 +1,5 @@
 let root = document.querySelector("#root");
-
+root.style.fontFamily = 'Montserrat';
 
 root.style.position = 'absolute';
 root.style.height = '100%';
@@ -46,7 +46,7 @@ hOne.textContent = "Make a Card";
 hOne.style.fontSize = '4.5rem';
 hOne.style.position = 'relative';
 hOne.style.top = '5%';
-hOne.style.fontWeight = '800';
+hOne.style.fontWeight = '700';
 divMain.appendChild(hOne);
 
 
@@ -61,14 +61,55 @@ divOne.style.top = '20%';
 
 const polaroid = document.createElement('button');
 polaroid.textContent = "Polaroid";
+polaroid.style.padding = '15px';
+polaroid.style.margin = '10px';
+polaroid.style.borderRadius = '10px';
+polaroid.style.color = 'black';
+polaroid.style.border = '2px solid black'
+polaroid.style.backgroundColor = 'white';
+polaroid.style.boxShadow = "3px 4px 3px #000000";
+
+
 const tv = document.createElement('button');
 tv.textContent = "TV";
+tv.style.padding = '15px';
+tv.style.margin = '10px';
+tv.style.borderRadius = '10px';
+tv.style.color = 'black';
+tv.style.backgroundColor = 'white';
+tv.style.border = '2px solid black';
+tv.style.boxShadow = "3px 4px 3px #000000";
+
+
 const traitor = document.createElement('button');
 traitor.textContent = "Traitor";
+traitor.style.padding = '15px';
+traitor.style.margin = '10px';
+traitor.style.borderRadius = '10px';
+traitor.style.color = 'black';
+traitor.style.backgroundColor = 'white';
+traitor.style.border = '2px solid black';
+traitor.style.boxShadow = "3px 4px 3px #000000";
+
 const fallGuy = document.createElement('button');
 fallGuy.textContent = "Fall Guy";
+fallGuy.style.padding = '15px';
+fallGuy.style.margin = '10px';
+fallGuy.style.borderRadius = '10px';
+fallGuy.style.color = 'black';
+fallGuy.style.backgroundColor = 'white';
+fallGuy.style.border = '2px solid black';
+fallGuy.style.boxShadow = "3px 4px 3px #000000";
+
 const radio = document.createElement('button');
 radio.textContent = "Radio";
+radio.style.padding = '15px';
+radio.style.margin = '10px';
+radio.style.borderRadius = '10px';
+radio.style.color = 'black';
+radio.style.backgroundColor = 'white';
+radio.style.border = '2px solid black';
+radio.style.boxShadow = "3px 4px 3px #000000";
 
 divOne.appendChild(polaroid);
 divOne.appendChild(tv);
@@ -91,12 +132,26 @@ divTwo.style.top = '25%';
 
 const inp = document.createElement("Input");
 inp.setAttribute("type","text");
+inp.style.padding = '15px';
+inp.style.margin = '10px';
+inp.style.borderRadius = '10px';
+inp.style.color = 'white';
+inp.style.backgroundColor = 'black';
+inp.style.border = '2px solid black';
+inp.style.boxShadow = "3px 4px 3px #000000";
 inp.setAttribute("value","Name Your Bling!");
 divTwo.appendChild(inp);
 
 
 const selector = document.createElement("Select");
 selector.setAttribute("id","sel");
+selector.style.padding = '25px';
+selector.style.margin = '10px';
+selector.style.borderRadius = '10px';
+selector.style.color = 'white';
+selector.style.backgroundColor = 'black';
+selector.style.border = '2px solid black';
+selector.style.boxShadow = "3px 4px 3px #000000";
 divTwo.appendChild(selector);
 selector.addEventListener('click', (event)=>{
     root.style.backgroundColor = "#FFFAFA";
@@ -170,9 +225,16 @@ let color = {
 
 
  const radioDiv = document.createElement("div");
- radioDiv.style.cssText = "display: flex";
+ radioDiv.style.display = "flex";
+ radioDiv.style.justifyContent = 'space-between';
  divTwo.appendChild(radioDiv);
 
+radioDiv.style.padding = '15px 25px 15px 25px';
+radioDiv.style.margin = '10px';
+radioDiv.style.borderRadius = '10px';
+radioDiv.style.boxShadow = "3px 4px 3px #000000";
+radioDiv.style.color = 'white';
+radioDiv.style.backgroundColor = 'black';
 
  const blob = document.createElement('input');
  blob.setAttribute("type","radio");
@@ -182,6 +244,7 @@ let color = {
  
  const blobspan = document.createElement("span");
  blobspan.textContent = "Blob";
+ blobspan.style.paddingRight = '10px';
  radioDiv.appendChild(blobspan);
 
  const nope = document.createElement('input');
@@ -204,15 +267,19 @@ let color = {
  const camera = document.createElement("button");
  divMain.appendChild(camera);
  camera.style.backgroundImage = "url('./assets/images/camera.png')";
+ camera.style.backgroundPosition = 'center';
  camera.style.width = '20px';
  camera.style.height = '20px';
  camera.style.padding = '15px';
+ camera.style.margin = '10px';
  camera.style.backgroundColor = 'white';
- camera.style.backgroundSize = 'contain';
+ camera.style.backgroundSize = '20px';
  camera.style.backgroundRepeat = 'no-repeat';
-
+ camera.style.border = '2px solid black';
+ camera.style.boxShadow = "3px 4px 3px #000000";
  camera.style.position = 'relative';
  camera.style.top = '30%';
+ camera.style.borderRadius = '5px';
 
 
 
@@ -252,8 +319,8 @@ divRoot.appendChild(rightDiv);
   blobDiv.style.position = 'relative';
   blobDiv.style.top = '5%'
   const imgDiv = document.createElement('div');
-  imgDiv.style.width = '200px';
-  imgDiv.style.height = '200px';
+  imgDiv.style.width = '250px';
+  imgDiv.style.height = '250px';
   imgDiv.style.border = 'none';
   blobDiv.appendChild(imgDiv);
 
@@ -270,42 +337,93 @@ imgs.style.position = 'relative';
 imgDiv.appendChild(imgs);
 polaroid.addEventListener("click", (event) => {
     imgs.src = './assets/images/polaroid.png';
+    polaroid.style.color = 'white';
+    polaroid.style.backgroundColor = 'black';
 
 })
 
 fallGuy.addEventListener("click", (event) => {
     imgs.src = './assets/images/fall-guy-01.png';
+    fallGuy.style.color = 'white';
+    fallGuy.style.backgroundColor = 'black';
 })
 radio.addEventListener("click", (event) => {
     imgs.src = './assets/images/radio-02.png';
+    radio.style.color = 'white';
+    radio.style.backgroundColor = 'black';
+
 })
 
 traitor.addEventListener("click", (event)=>{
     imgs.src = './assets/images/among-us.png';
+    traitor.style.color = 'white';
+    traitor.style.backgroundColor = 'black';
 })
 
 tv.addEventListener("click", (event)=>{
     
     imgs.src = './assets/images/tv.png';
+    tv.style.color = 'white';
+    tv.style.backgroundColor = 'black';
 })
+
+
+
+
+
+
+
+/* image div card */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 /* footer  */
 
 const foot = document.createElement('footer');
+
 root.appendChild(foot);
 foot.style.display='flex';
+foot.style.position = 'relative';
+foot.style.justifyContent= 'center';
 
 const pheart = document.createElement('p');
 pheart.textContent = "🖤 Credits: ";
 foot.appendChild(pheart);
 
 const aPolaroid = document.createElement('a');
+aPolaroid.style.paddingLeft = '10px';
+aPolaroid.style.color = 'black';
+
 const aFallGuy = document.createElement('a');
+aFallGuy.style.paddingLeft = '10px';
+aFallGuy.style.color = 'black';
+
 const aTv = document.createElement('a');
+aTv.style.paddingLeft = '10px';
+aTv.style.color = 'black';
+
 const aRadio = document.createElement('a');
+aRadio.style.paddingLeft = '10px';
+aRadio.style.color = 'black';
+
 const aTraitor = document.createElement('a');
+aTraitor.style.paddingLeft = '10px';
+aTraitor.style.color = 'black';
  
 aPolaroid.textContent = 'Polaroid';
 aFallGuy.textContent = 'Fall Guy';
@@ -344,9 +462,37 @@ foot.appendChild(aTraitor);
 const blobChange = () => {
     if(blob.checked)
     {
+
         blobDiv.style.backgroundImage = "url('./assets/images/blob.png')";
+        blobDiv.style.backgroundSize = '250px';
+        blobDiv.style.backgroundRepeat = 'no-repeat';
+        imgs.style.width = '150px';
+        imgs.style.height = '150px';
+        imgs.style.margin = '20%';
         console.log('blob here');
 
     }
 }
 blob.onchange = blobChange;
+
+
+const nopeDefault = () => {
+
+    if(nope.checked)
+    {
+        blobDiv.style.backgroundImage = 'none';
+        imgs.style.width = '100%';
+        imgs.style.height = '100%';
+        imgs.style.margin = 'auto';
+        imgs.style.objectFit = 'contain';
+
+    }
+
+
+}
+
+
+
+
+
+nope.onchange = nopeDefault;
