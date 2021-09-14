@@ -139,9 +139,8 @@ inp.style.color = 'white';
 inp.style.backgroundColor = 'black';
 inp.style.border = '2px solid black';
 inp.style.boxShadow = "3px 4px 3px #000000";
-inp.setAttribute("value","Name Your Bling!");
+inp.setAttribute("placeHolder","Name Your Bling!");
 divTwo.appendChild(inp);
-
 
 const selector = document.createElement("Select");
 selector.setAttribute("id","sel");
@@ -280,7 +279,7 @@ radioDiv.style.backgroundColor = 'black';
  camera.style.position = 'relative';
  camera.style.top = '30%';
  camera.style.borderRadius = '5px';
-
+ 
 
 
 
@@ -330,15 +329,39 @@ divRoot.appendChild(rightDiv);
 /* function for displaying images */
 
 const imgs = document.createElement('img');
-imgs.style.width = '100%';
-imgs.style.height = '100%';
+imgs.style.width = '150px';
+imgs.style.height = '150px';
 imgs.style.objectFit = 'contain';
 imgs.style.position = 'relative';
 imgDiv.appendChild(imgs);
+
+// const elementList = ['polaroid', 'fallGuy','radio','traitor','tv'];
+// const buttonColor = (currentElement, elementList) => {
+//     for(let element of elementList)
+//     {
+//         console.log(element);
+//         if(element != currentElement)
+//         {
+//             element.style.backgroundColor = 'white';
+//             element.style.color = 'black';
+//             console.log(element);
+//         }
+//     }
+// }
+
 polaroid.addEventListener("click", (event) => {
     imgs.src = './assets/images/polaroid.png';
     polaroid.style.color = 'white';
     polaroid.style.backgroundColor = 'black';
+    tv.style.backgroundColor = 'white';
+    tv.style.color = 'black';
+    fallGuy.style.backgroundColor = 'white';
+    fallGuy.style.color = 'black';
+    radio.style.backgroundColor = 'white';
+    radio.style.color = 'black';
+    traitor.style.backgroundColor = 'white';
+    traitor.style.color = 'black';
+    // buttonColor('polaroid',elementList);
 
 })
 
@@ -346,11 +369,27 @@ fallGuy.addEventListener("click", (event) => {
     imgs.src = './assets/images/fall-guy-01.png';
     fallGuy.style.color = 'white';
     fallGuy.style.backgroundColor = 'black';
+    tv.style.backgroundColor = 'white';
+    tv.style.color = 'black';
+    radio.style.backgroundColor = 'white';
+    radio.style.color = 'black';
+    traitor.style.backgroundColor = 'white';
+    traitor.style.color = 'black';
+    polaroid.style.backgroundColor = 'white';
+    polaroid.style.color = 'black';
 })
 radio.addEventListener("click", (event) => {
     imgs.src = './assets/images/radio-02.png';
     radio.style.color = 'white';
     radio.style.backgroundColor = 'black';
+    tv.style.backgroundColor = 'white';
+    tv.style.color = 'black';
+    fallGuy.style.backgroundColor = 'white';
+    fallGuy.style.color = 'black';
+    traitor.style.backgroundColor = 'white';
+    traitor.style.color = 'black';
+    polaroid.style.backgroundColor = 'white';
+    polaroid.style.color = 'black';
 
 })
 
@@ -358,6 +397,14 @@ traitor.addEventListener("click", (event)=>{
     imgs.src = './assets/images/among-us.png';
     traitor.style.color = 'white';
     traitor.style.backgroundColor = 'black';
+    tv.style.backgroundColor = 'white';
+    tv.style.color = 'black';
+    fallGuy.style.backgroundColor = 'white';
+    fallGuy.style.color = 'black';
+    radio.style.backgroundColor = 'white';
+    radio.style.color = 'black';
+    polaroid.style.backgroundColor = 'white';
+    polaroid.style.color = 'black';
 })
 
 tv.addEventListener("click", (event)=>{
@@ -365,6 +412,14 @@ tv.addEventListener("click", (event)=>{
     imgs.src = './assets/images/tv.png';
     tv.style.color = 'white';
     tv.style.backgroundColor = 'black';
+    fallGuy.style.backgroundColor = 'white';
+    fallGuy.style.color = 'black';
+    radio.style.backgroundColor = 'white';
+    radio.style.color = 'black';
+    traitor.style.backgroundColor = 'white';
+    traitor.style.color = 'black';
+    polaroid.style.backgroundColor = 'white';
+    polaroid.style.color = 'black';
 })
 
 
@@ -375,7 +430,8 @@ tv.addEventListener("click", (event)=>{
 
 /* image div card */
 
-
+const sectionDiv = document.createElement('div');
+root.append(sectionDiv);
 
 
 
@@ -481,8 +537,8 @@ const nopeDefault = () => {
     if(nope.checked)
     {
         blobDiv.style.backgroundImage = 'none';
-        imgs.style.width = '100%';
-        imgs.style.height = '100%';
+        imgs.style.width = '150px';
+        imgs.style.height = '150px';
         imgs.style.margin = 'auto';
         imgs.style.objectFit = 'contain';
 
