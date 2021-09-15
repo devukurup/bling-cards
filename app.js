@@ -467,7 +467,9 @@ camera.addEventListener("click",(event=>{
     section.style.display = 'flex';
     section.style.flexDirection = 'column';
     section.style.justifyContent = 'center';
-    sectionDiv.appendChild(section);
+
+    sectionDiv.insertBefore(section, sectionDiv.childNodes[0]);  
+
 
     const close = document.createElement("button");
     section.appendChild(close);
