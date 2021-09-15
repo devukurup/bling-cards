@@ -333,7 +333,11 @@ blobDiv.style.margintop = '25px';
   imgDiv.style.height = '250px';
   imgDiv.style.display = 'flex';
   imgDiv.style.flexWrap = 'wrap';
-  imgDiv.style.border = 'none';
+//   imgDiv.style.border = 'none';
+    
+
+//   blobDiv.style.marginLeft = 'auto';
+//   blobDiv.style.marginRight = 'auto';
   blobDiv.appendChild(imgDiv);
 
 
@@ -345,7 +349,8 @@ const imgs = document.createElement('img');
 imgs.style.width = '150px';
 imgs.style.height = '150px';
 imgs.style.objectFit = 'contain';
-imgs.style.position = 'relative';
+    imgs.style.margin = '20%';
+    // imgs.style.position = 'relative';
 imgDiv.appendChild(imgs);
 
 // const elementList = ['polaroid', 'fallGuy','radio','traitor','tv'];
@@ -546,7 +551,6 @@ const foot = document.createElement('footer');
 root.appendChild(foot);
 foot.style.display='flex';
 foot.style.flexWrap = 'wrap';
-foot.style.position = 'relative';
 foot.style.justifyContent= 'center';
 
 const pheart = document.createElement('p');
@@ -644,3 +648,32 @@ const nopeDefault = () => {
 
 
 nope.onchange = nopeDefault;
+
+
+
+/* for ipad view */
+
+const ipadView = window.matchMedia("(max-width: 768px)")
+
+function ipadViewChange(){
+
+
+  }
+ 
+  ipadView.addEventListener('change',ipadViewChange);
+
+
+
+
+
+  const mobileView = window.matchMedia("(max-width: 480px)")
+
+
+  function mobileViewChange(){
+      if(mobileView.matches){
+      rightDiv.style.margin = 'auto';
+      }
+    
+  }
+
+  mobileView.addEventListener('change',mobileViewChange);
