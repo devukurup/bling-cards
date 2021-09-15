@@ -306,8 +306,9 @@ divRoot.appendChild(rightDiv);
 
 
  const dynHeading = document.createElement('h1');
- dynHeading.style.fontSize = '3rem';
- dynHeading.style.fontWeight = '800';
+ dynHeading.style.fontSize = '4.5rem';
+ dynHeading.style.fontWeight = '900';
+ dynHeading.style.textShadow = "2px 3px 2px #000000";
  dynHeading.style.textAlign = 'center';
  rightDiv.appendChild(dynHeading);
 
@@ -510,8 +511,9 @@ camera.addEventListener("click",(event=>{
 
 
     const textSection = document.createElement('h1');
-    textSection.style.fontSize = '3rem';
+    textSection.style.fontSize = '2.5rem';
     textSection.style.fontWeight = '800';
+    textSection.style.textShadow = '2px 3px 2px #000000';
     textSection.style.margin = 'auto';
     textSection.textContent = dynHeading.textContent;
     section.appendChild(textSection);
@@ -669,8 +671,9 @@ nope.onchange = nopeDefault;
 const ipadView = window.matchMedia("(max-width: 768px)")
 
 function ipadViewChange(){
-
-
+    dynHeading.style.fontSize = '2.5rem';
+    dynHeading.style.fontWeight = '700';
+    dynHeading.style.textShadow = "2px 3px 2px #000000";
   }
  
   ipadView.addEventListener('change',ipadViewChange);
@@ -686,6 +689,9 @@ function ipadViewChange(){
       if(mobileView.matches){
       rightDiv.style.margin = 'auto';
       rightDiv.style.marginTop = '40px';
+      dynHeading.style.fontSize = '2.5rem';
+      dynHeading.style.fontWeight = '700';
+      dynHeading.style.textShadow = "2px 3px 2px #000000";
       }
     
   }
