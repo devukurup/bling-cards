@@ -298,8 +298,8 @@ radioDiv.style.backgroundColor = 'black';
 
  camera.style.backgroundImage = "url('./assets/images/camera.png')";
  camera.style.backgroundPosition = 'center';
- camera.style.width = '20px';
- camera.style.height = '20px';
+ camera.style.width = '45px';
+ camera.style.height = '45px';
  camera.style.padding = '15px';
  camera.style.margin = '10px';
  camera.style.backgroundColor = 'transparent';
@@ -437,6 +437,8 @@ cardDiv.style.display = 'none';
 
 
 camera.addEventListener("click",(event=>{
+    camera.style.backgroundColor = 'white';
+    setInterval(() => {camera.style.backgroundColor = "transparent"},250);
 
     cardDiv.style.display = 'flex';
     const card = document.createElement('div');
