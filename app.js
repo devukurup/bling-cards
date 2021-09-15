@@ -516,6 +516,7 @@ camera.addEventListener("click",(event=>{
     imgSectionDiv.style.width = '100%';
     section.appendChild(imgSectionDiv);
     imgSectionDiv.style.backgroundImage = blobDiv.style.backgroundImage;
+    imgSectionDiv.style.backgroundPosition = 'center';
     imgSectionDiv.style.backgroundSize = '250px';
     imgSectionDiv.style.backgroundRepeat = 'no-repeat';
 
@@ -527,7 +528,8 @@ camera.addEventListener("click",(event=>{
     imgSection.src = imgs.src;
     imgSection.style.width = '150px';
     imgSection.style.height = '150px';
-    imgSection.style.margin = '18%';
+    imgSection.style.margin = '23%';
+
     imgSection.style.objectFit = 'contain';
     imgSectionDiv.appendChild(imgSection);
 
