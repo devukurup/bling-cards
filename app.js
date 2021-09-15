@@ -306,8 +306,8 @@ divRoot.appendChild(rightDiv);
 
 
  const dynHeading = document.createElement('h1');
- dynHeading.style.fontSize = '4.5rem';
- dynHeading.style.fontWeight = '900';
+ dynHeading.style.fontSize = '3rem';
+ dynHeading.style.fontWeight = '800';
  dynHeading.style.textShadow = "2px 3px 2px #000000";
  dynHeading.style.textAlign = 'center';
  rightDiv.appendChild(dynHeading);
