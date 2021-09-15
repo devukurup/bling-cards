@@ -306,8 +306,9 @@ divRoot.appendChild(rightDiv);
 
 
  const dynHeading = document.createElement('h1');
- dynHeading.style.fontSize = '2rem';
- dynHeading.style.fontWeight = '700';
+ dynHeading.style.fontSize = '4.5rem';
+ dynHeading.style.fontWeight = '900';
+ dynHeading.style.textShadow = "2px 3px 2px #000000";
  dynHeading.style.textAlign = 'center';
  rightDiv.appendChild(dynHeading);
 
@@ -350,6 +351,7 @@ imgs.style.width = '150px';
 imgs.style.height = '150px';
 imgs.style.objectFit = 'contain';
     imgs.style.margin = '20%';
+imgs.style.display = 'none';
     // imgs.style.position = 'relative';
 imgDiv.appendChild(imgs);
 
@@ -368,6 +370,7 @@ imgDiv.appendChild(imgs);
 // }
 
 polaroid.addEventListener("click", (event) => {
+    imgs.style.display = 'block';
     imgs.src = './assets/images/polaroid.png';
     polaroid.style.color = 'white';
     polaroid.style.backgroundColor = 'black';
@@ -384,6 +387,7 @@ polaroid.addEventListener("click", (event) => {
 })
 
 fallGuy.addEventListener("click", (event) => {
+    imgs.style.display = 'block';
     imgs.src = './assets/images/fall-guy-01.png';
     fallGuy.style.color = 'white';
     fallGuy.style.backgroundColor = 'black';
@@ -397,6 +401,7 @@ fallGuy.addEventListener("click", (event) => {
     polaroid.style.color = 'black';
 })
 radio.addEventListener("click", (event) => {
+    imgs.style.display = 'block';
     imgs.src = './assets/images/radio-02.png';
     radio.style.color = 'white';
     radio.style.backgroundColor = 'black';
@@ -412,6 +417,7 @@ radio.addEventListener("click", (event) => {
 })
 
 traitor.addEventListener("click", (event)=>{
+    imgs.style.display = 'block';
     imgs.src = './assets/images/among-us.png';
     traitor.style.color = 'white';
     traitor.style.backgroundColor = 'black';
@@ -426,7 +432,7 @@ traitor.addEventListener("click", (event)=>{
 })
 
 tv.addEventListener("click", (event)=>{
-    
+    imgs.style.display = 'block';
     imgs.src = './assets/images/tv.png';
     tv.style.color = 'white';
     tv.style.backgroundColor = 'black';
@@ -505,8 +511,9 @@ camera.addEventListener("click",(event=>{
 
 
     const textSection = document.createElement('h1');
-    textSection.style.fontSize = '2rem';
-    textSection.style.fontWeight = '700';
+    textSection.style.fontSize = '2.5rem';
+    textSection.style.fontWeight = '800';
+    textSection.style.textShadow = '2px 3px 2px #000000';
     textSection.style.margin = 'auto';
     textSection.textContent = dynHeading.textContent;
     section.appendChild(textSection);
@@ -664,8 +671,9 @@ nope.onchange = nopeDefault;
 const ipadView = window.matchMedia("(max-width: 768px)")
 
 function ipadViewChange(){
-
-
+    dynHeading.style.fontSize = '2.5rem';
+    dynHeading.style.fontWeight = '700';
+    dynHeading.style.textShadow = "2px 3px 2px #000000";
   }
  
   ipadView.addEventListener('change',ipadViewChange);
@@ -681,6 +689,9 @@ function ipadViewChange(){
       if(mobileView.matches){
       rightDiv.style.margin = 'auto';
       rightDiv.style.marginTop = '40px';
+      dynHeading.style.fontSize = '2.5rem';
+      dynHeading.style.fontWeight = '700';
+      dynHeading.style.textShadow = "2px 3px 2px #000000";
       }
     
   }
