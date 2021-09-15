@@ -2,8 +2,8 @@ let root = document.querySelector("#root");
 root.style.fontFamily = 'Montserrat';
 
 root.style.position = 'absolute';
-root.style.height = '100%';
-root.style.width = '100%';
+root.style.height = '100vh';
+root.style.width = '100vw';
 
 
 /* Create nav element */
@@ -132,7 +132,7 @@ const divTwo = document.createElement('div');
 divTwo.style.cssText = "display:flex;";
 divMain.appendChild(divTwo);
 divTwo.style.flexWrap= 'wrap';
-divTwo.style.height = 'auto';
+divTwo.style.flexShrink = '1';
 // divTwo.style.position = 'relative';
 // divTwo.style.top = '25%';
 divTwo.style.marginTop = '20px';
@@ -151,7 +151,7 @@ divTwo.appendChild(inp);
 
 const selector = document.createElement("Select");
 selector.setAttribute("id","sel");
-selector.style.padding = '25px';
+selector.style.padding = '5px';
 selector.style.margin = '10px';
 selector.style.borderRadius = '10px';
 selector.style.color = 'white';
@@ -455,12 +455,14 @@ sectionDiv.style.padding = '5%';
 sectionDiv.style.flexWrap = 'wrap';
 sectionDiv.style.justifyContent = 'space-around';
 sectionDiv.style.margin = '5%';
+sectionDiv.style.display = 'none';
 
 
 /* create image shots */
 
 
 camera.addEventListener("click",(event=>{
+    sectionDiv.style.display = 'flex';
     const section = document.createElement('div');
     section.style.margin = '5px';
     section.style.marginTop = '15px';
@@ -493,6 +495,9 @@ camera.addEventListener("click",(event=>{
 
     close.addEventListener("click",(event) => {
         event.target.parentNode.remove();
+        if(!sectionDiv.hasChildNodes()){
+            sectionDiv.style.display = 'none';
+        }
     })
 
 
@@ -511,6 +516,7 @@ camera.addEventListener("click",(event=>{
     imgSectionDiv.style.width = '100%';
     section.appendChild(imgSectionDiv);
     imgSectionDiv.style.backgroundImage = blobDiv.style.backgroundImage;
+    imgSectionDiv.style.backgroundPosition = 'center';
     imgSectionDiv.style.backgroundSize = '250px';
     imgSectionDiv.style.backgroundRepeat = 'no-repeat';
 
@@ -522,7 +528,8 @@ camera.addEventListener("click",(event=>{
     imgSection.src = imgs.src;
     imgSection.style.width = '150px';
     imgSection.style.height = '150px';
-    imgSection.style.margin = '18%';
+    imgSection.style.margin = '23%';
+
     imgSection.style.objectFit = 'contain';
     imgSectionDiv.appendChild(imgSection);
 
@@ -552,6 +559,7 @@ root.appendChild(foot);
 foot.style.display='flex';
 foot.style.flexWrap = 'wrap';
 foot.style.justifyContent= 'center';
+foot.style.paddingBottom = '15px';
 
 const pheart = document.createElement('p');
 pheart.textContent = "🖤 Credits: ";
@@ -672,6 +680,7 @@ function ipadViewChange(){
   function mobileViewChange(){
       if(mobileView.matches){
       rightDiv.style.margin = 'auto';
+      rightDiv.style.marginTop = '40px';
       }
     
   }
