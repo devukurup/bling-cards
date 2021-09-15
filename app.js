@@ -1,190 +1,194 @@
+/* root styling */
+
 let root = document.querySelector("#root");
 root.style.fontFamily = 'Montserrat';
-
 root.style.position = 'absolute';
 root.style.height = '100vh';
 root.style.width = '100vw';
-
+root.style.backgroundColor = '#FFFAFA';
+document.body.style.backgroundColor = "#FFFAFA";
 
 /* Create nav element */
 
 const bling = document.createElement('nav');
 bling.textContent = "BLING!";
-bling.style.cssText = "text-align:center; font-weight: bold ;text-shadow: 2px 1px #FF6347; font-size: 2rem;";
+
+/* nav element styling */
+
+bling.style.textAlign = 'center';
+bling.style.fontWeight = 'bold';
+bling.style.textShadow = '2px 1px #FF6347';
+bling.style.fontSize = '2rem';
 bling.style.padding = '2%';
+
+/* append navbar - bling as root's child */
+
 root.appendChild(bling);
 
+//  styling - flex   
 
-root.style.backgroundColor = '#FFFAFA';
-document.body.style.backgroundColor = "#FFFAFA";
+const flexStyle = {
+    display: "flex",
+    flexWrap: "wrap",
+};
 
-const divRoot = document.createElement('div');
-divRoot.style.display = "flex";
-divRoot.style.justifyContent = 'space-between';
-divRoot.style.flexWrap = 'wrap';
-root.appendChild(divRoot);
-divRoot.style.padding = '5%';
-divRoot.style.margin = '5%';
+/* mainDiv is the parent div of both controlPanel and preview */
 
+const mainDiv = document.createElement('div');
 
+/* mainDiv element styling */
+
+Object.assign(mainDiv.style,flexStyle);
+mainDiv.style.justifyContent = 'space-between';
+mainDiv.style.padding = '5%';
+mainDiv.style.margin = '5%';
+
+/* append mainDiv as root's child */
+
+root.appendChild(mainDiv);
 
 /* Create div element for the contents */
- 
 
-const divMain = document.createElement('div');
-divMain.style.cssText = "display:flex; flex-direction: column ";
-divRoot.appendChild(divMain);
+ const controlPanel = document.createElement('div');
 
-const pOne = document.createElement('p');
-pOne.textContent = "Sizzle your life";
-divMain.appendChild(pOne);
-pOne.style.fontSize = '2.5rem';
-// pOne.style.fontWeight = '100';
-// pOne.style.position = 'relative';
-// pOne.style.top = '2px';
+/* controlPanel styling */
 
-const hOne = document.createElement('h2');
-hOne.textContent = "Make a Card";
-hOne.style.fontSize = '4.5rem';
-// hOne.style.position = 'relative';
-// hOne.style.top = '5%';
-hOne.style.fontWeight = '700';
-hOne.style.marginTop = '25px';
-divMain.appendChild(hOne);
+controlPanel.style.display = 'flex';
+controlPanel.style.flexDirection = 'column';
 
+/* append controlPanel as mainDiv's child */
 
-const divOne = document.createElement('div');
-divOne.style.cssText = "display: flex;";
-divMain.appendChild(divOne);
-divOne.style.marginTop = '50px';
-divOne.style.flexWrap = 'wrap';
-// divOne.style.position = 'relative';
-// divOne.style.top = '20%';
+mainDiv.appendChild(controlPanel);
 
+/* Tag line */
 
-/* adding set of buttons  for div one*/
+const sizzle = document.createElement('p');
+
+/* append sizzle as controlPanel's child */
+
+controlPanel.appendChild(sizzle);
+
+/* sizzle styling */
+
+sizzle.textContent = "Sizzle your life";
+sizzle.style.fontSize = '2.5rem';
+const tagLine = document.createElement('h1');
+
+/* append tagLine as controlPanel's child */
+
+controlPanel.appendChild(tagLine);
+
+/* tagLine styling */
+
+tagLine.textContent = "Make a Card";
+tagLine.style.fontSize = '4.5rem';
+tagLine.style.fontWeight = '700';
+tagLine.style.marginTop = '25px';
+
+/* image button */
+
+const imageButtonDiv = document.createElement('div');
+
+/* append imageButtonDiv as controlPanel's child */
+
+controlPanel.appendChild(imageButtonDiv);
+
+/* imageButtonDiv styling */
+
+Object.assign(imageButtonDiv.style,flexStyle);
+imageButtonDiv.style.marginTop = '50px';
+
+/* image button styling */
+
+const imageButtonStyle = {
+    padding: '15px',
+    margin: '10px',
+    borderRadius: '10px',
+    color: 'black',
+    border: '2px solid black',
+    backgroundColor: 'white',
+    boxShadow: '3px 4px 3px #000000',
+};
+
+/* image buttons -> polaroid, tv, traitor, fall Guy, radio */
 
 const polaroid = document.createElement('button');
+Object.assign(polaroid.style,imageButtonStyle);
 polaroid.textContent = "Polaroid";
-polaroid.style.padding = '15px';
-polaroid.style.margin = '10px';
-polaroid.style.borderRadius = '10px';
-polaroid.style.color = 'black';
-polaroid.style.border = '2px solid black'
-polaroid.style.backgroundColor = 'white';
-polaroid.style.boxShadow = "3px 4px 3px #000000";
-
-
 const tv = document.createElement('button');
 tv.textContent = "TV";
-tv.style.padding = '15px';
-tv.style.margin = '10px';
-tv.style.borderRadius = '10px';
-tv.style.color = 'black';
-tv.style.backgroundColor = 'white';
-tv.style.border = '2px solid black';
-tv.style.boxShadow = "3px 4px 3px #000000";
-
-
+Object.assign(tv.style,imageButtonStyle);
 const traitor = document.createElement('button');
 traitor.textContent = "Traitor";
-traitor.style.padding = '15px';
-traitor.style.margin = '10px';
-traitor.style.borderRadius = '10px';
-traitor.style.color = 'black';
-traitor.style.backgroundColor = 'white';
-traitor.style.border = '2px solid black';
-traitor.style.boxShadow = "3px 4px 3px #000000";
-
+Object.assign(traitor.style,imageButtonStyle);
 const fallGuy = document.createElement('button');
 fallGuy.textContent = "Fall Guy";
-fallGuy.style.padding = '15px';
-fallGuy.style.margin = '10px';
-fallGuy.style.borderRadius = '10px';
-fallGuy.style.color = 'black';
-fallGuy.style.backgroundColor = 'white';
-fallGuy.style.border = '2px solid black';
-fallGuy.style.boxShadow = "3px 4px 3px #000000";
-
+Object.assign(fallGuy.style,imageButtonStyle);
 const radio = document.createElement('button');
 radio.textContent = "Radio";
-radio.style.padding = '15px';
-radio.style.margin = '10px';
-radio.style.borderRadius = '10px';
-radio.style.color = 'black';
-radio.style.backgroundColor = 'white';
-radio.style.border = '2px solid black';
-radio.style.boxShadow = "3px 4px 3px #000000";
+Object.assign(radio.style,imageButtonStyle);
 
-divOne.appendChild(polaroid);
-divOne.appendChild(tv);
-divOne.appendChild(traitor);
-divOne.appendChild(fallGuy);
-divOne.appendChild(radio);
+/* append above buttons as imageButtonDiv's child */
 
+imageButtonDiv.appendChild(polaroid);
+imageButtonDiv.appendChild(tv);
+imageButtonDiv.appendChild(traitor);
+imageButtonDiv.appendChild(fallGuy);
+imageButtonDiv.appendChild(radio);
 
+/* inputDiv for text input, background color drop down , blob radio buttons*/
 
+const inputDiv = document.createElement('div');
 
-/* div two */
+/* append inputDiv as controlPanel's child */
 
+controlPanel.appendChild(inputDiv);
 
-const divTwo = document.createElement('div');
-divTwo.style.cssText = "display:flex;";
-divMain.appendChild(divTwo);
-divTwo.style.flexWrap= 'wrap';
-divTwo.style.flexShrink = '1';
-// divTwo.style.position = 'relative';
-// divTwo.style.top = '25%';
-divTwo.style.marginTop = '20px';
+/* inputDiv styling */
 
-const inp = document.createElement("Input");
-inp.setAttribute("type","text");
-inp.style.padding = '15px';
-inp.style.margin = '10px';
-inp.style.borderRadius = '10px';
-inp.style.color = 'white';
-inp.style.backgroundColor = 'black';
-inp.style.border = '2px solid black';
-inp.style.boxShadow = "3px 4px 3px #000000";
-inp.setAttribute("placeHolder","Name Your Bling!");
-divTwo.appendChild(inp);
+Object.assign(inputDiv.style,flexStyle);
+inputDiv.style.marginTop = '20px';
 
-const selector = document.createElement("Select");
-selector.setAttribute("id","sel");
-selector.style.padding = '5px';
-selector.style.margin = '10px';
-selector.style.borderRadius = '10px';
-selector.style.color = 'white';
-selector.style.backgroundColor = 'black';
-selector.style.border = '2px solid black';
-selector.style.boxShadow = "3px 4px 3px #000000";
-divTwo.appendChild(selector);
-// selector.addEventListener('click', (event)=>{
-//     root.style.backgroundColor = "#FFFAFA";
-//     document.body.style.backgroundColor = "#FFFAFA";
-// })
+/* text input */
 
+const textInput = document.createElement("Input");
 
-/* some set of color names and hex values for reference */
+/* text input styling */
 
-/* 
-Snow - #FFFAFA
-AliceBlue - #F0F8FF
-Aqua - #00FFFF
-Aquamarine - #7FFFD4
-CadetBlue - #5F9EA0
-Chocolate - #D2691E
-CornflowerBlue - #6495ED
-DarkCyan - #008B8B
-DarkOrange - #FF8C00
-DodgerBlue - #1E90FF
-Lavender - #E6E6FA
-PaleGreen - #98FB98
-*/
+textInput.setAttribute("type","text");
+textInput.style.padding = '15px';
+textInput.style.margin = '10px';
+textInput.style.borderRadius = '10px';
+textInput.style.color = 'white';
+textInput.style.backgroundColor = 'black';
+textInput.style.border = '2px solid black';
+textInput.style.boxShadow = "3px 4px 3px #000000";
+textInput.setAttribute("placeHolder","Name Your Bling!");
 
-/* loop for options */
+/* append textInput as inputDiv's child */
 
+inputDiv.appendChild(textInput);
 
+/* Drop down menu for background colors */
+
+const bgSelector = document.createElement("Select");
+
+/* background selector styling */
+
+bgSelector.setAttribute("id","sel");
+bgSelector.style.padding = '5px';
+bgSelector.style.margin = '10px';
+bgSelector.style.borderRadius = '10px';
+bgSelector.style.color = 'white';
+bgSelector.style.backgroundColor = 'black';
+bgSelector.style.border = '2px solid black';
+bgSelector.style.boxShadow = "3px 4px 3px #000000";
+
+/* append bgSelector as inputDiv's child */
+
+inputDiv.appendChild(bgSelector);
+
+/* color contains all color names and values  */
 
 let color = {
     Snow : "#FFFAFA",
@@ -200,43 +204,37 @@ let color = {
     Lavender : "#E6E6FA",
     PaleGreen : "#98FB98",
   };
-  
-  for (let col in color) {
-    
+
+/* loop for creating options with color names */
+
+for (let col in color) {
     const opt = document.createElement("option");
     opt.setAttribute("value",color[col]);
     const nod = document.createTextNode(col);
     opt.appendChild(nod);
-    selector.appendChild(opt);
+    bgSelector.appendChild(opt);
     }
 
-    /* function for root  background color */
+/* function for changing background color based on color selection*/
 
-    const changeColor = (e) => {
+const changeColor = (e) => {
+root.style.backgroundColor = e.target.value;
+document.body.style.backgroundColor = e.target.value;
+}
+bgSelector.onchange = changeColor;
 
-        root.style.backgroundColor = e.target.value;
-        document.body.style.backgroundColor = e.target.value;
+/* radioDiv contains two radio buttons -> blob and nope */
 
-    }
-    
-    
-    selector.onchange = changeColor;
+const radioDiv = document.createElement("div");
 
+/* append radioDiv as inputDiv's child */
 
- 
+inputDiv.appendChild(radioDiv);
 
+/* radioDiv styling */
 
-
-
-
- /* create radio buttons  blob and nope*/
-
-
- const radioDiv = document.createElement("div");
- radioDiv.style.display = "flex";
- radioDiv.style.justifyContent = 'space-between';
- divTwo.appendChild(radioDiv);
-
+radioDiv.style.display = "flex";
+radioDiv.style.justifyContent = 'space-between';
 radioDiv.style.padding = '15px 25px 15px 25px';
 radioDiv.style.margin = '10px';
 radioDiv.style.borderRadius = '10px';
@@ -244,36 +242,58 @@ radioDiv.style.boxShadow = "3px 4px 3px #000000";
 radioDiv.style.color = 'white';
 radioDiv.style.backgroundColor = 'black';
 
+/* blob radio button */
+
  const blob = document.createElement('input');
  blob.setAttribute("type","radio");
  blob.setAttribute("name","rad");
  blob.setAttribute("value","blob");
+
+ /* append blob radio button as radioDiv's child */
+
  radioDiv.appendChild(blob);
- 
+
+ /* blobspan for blob text */
+
  const blobspan = document.createElement("span");
  blobspan.textContent = "Blob";
  blobspan.style.paddingRight = '10px';
+
+  /* append blob span as radioDiv's child */
+
  radioDiv.appendChild(blobspan);
+
+/* nope radio button */
 
  const nope = document.createElement('input');
  nope.setAttribute("type","radio");
  nope.setAttribute("name","rad");
  nope.setAttribute("value","nope");
  nope.checked = 'true';
+
+ /* append nope radio button as radioDiv's child */
+
  radioDiv.appendChild(nope);
+
+/* nopespan for nope text */
 
  const nopespan = document.createElement("span");
  nopespan.textContent = "Nope";
+
+ /* append span as radioDiv's child */
+
  radioDiv.appendChild(nopespan);
 
-
-
-
-
- /* add camera button icon*/ 
+/* add camera button icon */ 
 
  const camera = document.createElement("button");
- divMain.appendChild(camera);
+
+ /* add camera button as controlPanel's child */
+
+ controlPanel.appendChild(camera);
+
+ /* camera styling */
+
  camera.style.backgroundImage = "url('./assets/images/camera.png')";
  camera.style.backgroundPosition = 'center';
  camera.style.width = '20px';
@@ -286,206 +306,159 @@ radioDiv.style.backgroundColor = 'black';
  camera.style.border = '2px solid black';
  camera.style.boxShadow = "3px 4px 3px #000000";
  camera.style.marginTop = '40px'
-//  camera.style.position = 'relative';
-//  camera.style.top = '30%';
  camera.style.borderRadius = '5px';
- 
 
+ /* Preview Div for preview text and image */
 
+const preview = document.createElement('div');
 
+/* preview styling */
 
+preview.style.display = "flex";
+preview.style.flexDirection = "column";
 
+/* add preview as mainDiv's child */
 
- /* Create dynamic heading */
+mainDiv.appendChild(preview);
 
-const rightDiv = document.createElement('div');
-rightDiv.style.display = "flex";
-rightDiv.style.flexDirection = "column";
-divRoot.appendChild(rightDiv);
+/* preview Text */
 
+const previewText = document.createElement('h1');
+ previewText.style.fontSize = '3rem';
+ previewText.style.fontWeight = '800';
+ previewText.style.textShadow = "2px 3px 2px #000000";
+ previewText.style.textAlign = 'center';
 
+ /* add preview Text as preview's child */
 
- const dynHeading = document.createElement('h1');
- dynHeading.style.fontSize = '3rem';
- dynHeading.style.fontWeight = '800';
- dynHeading.style.textShadow = "2px 3px 2px #000000";
- dynHeading.style.textAlign = 'center';
- rightDiv.appendChild(dynHeading);
+ preview.appendChild(previewText);
 
+/* function for adding preview text */
 
-
-
- /* function for dynamic typing */
- inp.addEventListener("keyup",(event) => {
-    dynHeading.textContent = inp.value;
+ textInput.addEventListener("keyup",(event) => {
+    previewText.textContent = textInput.value;
   })
 
+ /* div for blob and preview image */
 
+ const previewImageDiv = document.createElement('div');
 
+  /* add preview Text as preview's child */
 
-  /* div for image */
- const blobDiv = document.createElement('div');
- rightDiv.appendChild(blobDiv);
-//   blobDiv.style.position = 'relative';
-//   blobDiv.style.top = '5%'
-blobDiv.style.margintop = '25px';
+ preview.appendChild(previewImageDiv);
+
+ /* preview image div styling */
+
+  previewImageDiv.style.margintop = '25px';
   const imgDiv = document.createElement('div');
   imgDiv.style.width = '250px';
   imgDiv.style.height = '250px';
-  imgDiv.style.display = 'flex';
-  imgDiv.style.flexWrap = 'wrap';
-//   imgDiv.style.border = 'none';
-    
+  Object.assign(imgDiv.style,flexStyle);
+  previewImageDiv.appendChild(imgDiv);
 
-//   blobDiv.style.marginLeft = 'auto';
-//   blobDiv.style.marginRight = 'auto';
-  blobDiv.appendChild(imgDiv);
+  /* function for displaying preview image */
 
+const previewImage = document.createElement('img');
 
+/* preview image styling */
 
-  
-/* function for displaying images */
+previewImage.style.width = '150px';
+previewImage.style.height = '150px';
+previewImage.style.objectFit = 'contain';
+previewImage.style.margin = '20%';
+previewImage.style.display = 'none';
+imgDiv.appendChild(previewImage);
 
-const imgs = document.createElement('img');
-imgs.style.width = '150px';
-imgs.style.height = '150px';
-imgs.style.objectFit = 'contain';
-    imgs.style.margin = '20%';
-imgs.style.display = 'none';
-    // imgs.style.position = 'relative';
-imgDiv.appendChild(imgs);
+/* buttonColor function changes clicked button's color */
 
-// const elementList = ['polaroid', 'fallGuy','radio','traitor','tv'];
-// const buttonColor = (currentElement, elementList) => {
-//     for(let element of elementList)
-//     {
-//         console.log(element);
-//         if(element != currentElement)
-//         {
-//             element.style.backgroundColor = 'white';
-//             element.style.color = 'black';
-//             console.log(element);
-//         }
-//     }
-// }
+const buttonList = [polaroid,tv,traitor,radio,fallGuy];
+function buttonColor(buttonObj){
+    for(let button of buttonList){
+        if(button != buttonObj){
+            button.style.backgroundColor = 'white';
+            button.style.color = 'black';
+        }
+        else{
+            button.style.backgroundColor = 'black';
+            button.style.color = 'white';
+        }
+    }
+}
+
+/* on click image buttons function */
 
 polaroid.addEventListener("click", (event) => {
-    imgs.style.display = 'block';
-    imgs.src = './assets/images/polaroid.png';
-    polaroid.style.color = 'white';
-    polaroid.style.backgroundColor = 'black';
-    tv.style.backgroundColor = 'white';
-    tv.style.color = 'black';
-    fallGuy.style.backgroundColor = 'white';
-    fallGuy.style.color = 'black';
-    radio.style.backgroundColor = 'white';
-    radio.style.color = 'black';
-    traitor.style.backgroundColor = 'white';
-    traitor.style.color = 'black';
-    // buttonColor('polaroid',elementList);
-
+    previewImage.style.display = 'block';
+    previewImage.src = './assets/images/polaroid.png';
+    buttonColor(polaroid)
 })
-
 fallGuy.addEventListener("click", (event) => {
-    imgs.style.display = 'block';
-    imgs.src = './assets/images/fall-guy-01.png';
-    fallGuy.style.color = 'white';
-    fallGuy.style.backgroundColor = 'black';
-    tv.style.backgroundColor = 'white';
-    tv.style.color = 'black';
-    radio.style.backgroundColor = 'white';
-    radio.style.color = 'black';
-    traitor.style.backgroundColor = 'white';
-    traitor.style.color = 'black';
-    polaroid.style.backgroundColor = 'white';
-    polaroid.style.color = 'black';
+    previewImage.style.display = 'block';
+    previewImage.src = './assets/images/fall-guy-01.png';
+    buttonColor(fallGuy);
 })
 radio.addEventListener("click", (event) => {
-    imgs.style.display = 'block';
-    imgs.src = './assets/images/radio-02.png';
-    radio.style.color = 'white';
-    radio.style.backgroundColor = 'black';
-    tv.style.backgroundColor = 'white';
-    tv.style.color = 'black';
-    fallGuy.style.backgroundColor = 'white';
-    fallGuy.style.color = 'black';
-    traitor.style.backgroundColor = 'white';
-    traitor.style.color = 'black';
-    polaroid.style.backgroundColor = 'white';
-    polaroid.style.color = 'black';
-
+    previewImage.style.display = 'block';
+    previewImage.src = './assets/images/radio-02.png';
+    buttonColor(radio);
 })
-
 traitor.addEventListener("click", (event)=>{
-    imgs.style.display = 'block';
-    imgs.src = './assets/images/among-us.png';
-    traitor.style.color = 'white';
-    traitor.style.backgroundColor = 'black';
-    tv.style.backgroundColor = 'white';
-    tv.style.color = 'black';
-    fallGuy.style.backgroundColor = 'white';
-    fallGuy.style.color = 'black';
-    radio.style.backgroundColor = 'white';
-    radio.style.color = 'black';
-    polaroid.style.backgroundColor = 'white';
-    polaroid.style.color = 'black';
+    previewImage.style.display = 'block';
+    previewImage.src = './assets/images/among-us.png';
+    buttonColor(traitor);
 })
-
 tv.addEventListener("click", (event)=>{
-    imgs.style.display = 'block';
-    imgs.src = './assets/images/tv.png';
-    tv.style.color = 'white';
-    tv.style.backgroundColor = 'black';
-    fallGuy.style.backgroundColor = 'white';
-    fallGuy.style.color = 'black';
-    radio.style.backgroundColor = 'white';
-    radio.style.color = 'black';
-    traitor.style.backgroundColor = 'white';
-    traitor.style.color = 'black';
-    polaroid.style.backgroundColor = 'white';
-    polaroid.style.color = 'black';
+    previewImage.style.display = 'block';
+    previewImage.src = './assets/images/tv.png';
+    buttonColor(tv);
 })
 
+/* cardDiv - div which contains preview screenshot  cards */
 
+const cardDiv = document.createElement('div');
 
+/* append cardDiv as root's child */
 
+root.append(cardDiv);
 
+/* cardDiv styling */
 
-
-/* image div card */
-
-const sectionDiv = document.createElement('div');
-root.append(sectionDiv);
-sectionDiv.style.display = 'flex';
-sectionDiv.style.padding = '5%';
-sectionDiv.style.flexWrap = 'wrap';
-sectionDiv.style.justifyContent = 'space-around';
-sectionDiv.style.margin = '5%';
-sectionDiv.style.display = 'none';
+cardDiv.style.display = 'flex';
+cardDiv.style.padding = '5%';
+cardDiv.style.flexWrap = 'wrap';
+cardDiv.style.justifyContent = 'space-around';
+cardDiv.style.margin = '5%';
+cardDiv.style.display = 'none';
 
 
 /* create image shots */
 
 
 camera.addEventListener("click",(event=>{
-    sectionDiv.style.display = 'flex';
-    const section = document.createElement('div');
-    section.style.margin = '5px';
-    section.style.marginTop = '15px';
-    section.style.height = '400px';
-    section.style.width = '300px';
-    section.style.border = '2px solid black';
-    section.style.boxShadow = "3px 4px 3px #000000";
-    section.style.backgroundColor = root.style.backgroundColor;
-    section.style.display = 'flex';
-    section.style.flexDirection = 'column';
-    section.style.justifyContent = 'center';
+    cardDiv.style.display = 'flex';
+    const card = document.createElement('div');
+    card.style.margin = '5px';
+    card.style.marginTop = '15px';
+    card.style.height = '400px';
+    card.style.width = '300px';
+    card.style.border = '2px solid black';
+    card.style.boxShadow = "3px 4px 3px #000000";
+    card.style.backgroundColor = root.style.backgroundColor;
+    card.style.display = 'flex';
+    card.style.flexDirection = 'column';
+    card.style.justifyContent = 'center';
 
-    sectionDiv.insertBefore(section, sectionDiv.childNodes[0]);  
+    /* add card as first childNode of carDiv */
 
+    cardDiv.insertBefore(card, cardDiv.childNodes[0]);  
+
+    /* add close button for preview screenshot cards */
 
     const close = document.createElement("button");
-    section.appendChild(close);
+    card.appendChild(close);
+
+    /* close button styling */
+
     close.style.backgroundImage = "url('./assets/images/icon_delete.png')";
     close.style.backgroundPosition = 'center';
     close.style.width = '15px';
@@ -498,99 +471,87 @@ camera.addEventListener("click",(event=>{
     close.style.backgroundRepeat = 'no-repeat';
     close.style.float = 'right';
 
+    /* add event listener for close button */
 
     close.addEventListener("click",(event) => {
         event.target.parentNode.remove();
-        if(!sectionDiv.hasChildNodes()){
-            sectionDiv.style.display = 'none';
+        if(!cardDiv.hasChildNodes()){
+            cardDiv.style.display = 'none';
         }
     })
 
+    /* card text */
 
+    const textCard = document.createElement('h1');
 
+    /* card text styling */
 
+    textCard.style.fontSize = '2.5rem';
+    textCard.style.fontWeight = '800';
+    textCard.style.textShadow = '2px 3px 2px #000000';
+    textCard.style.margin = 'auto';
+    textCard.textContent = previewText.textContent;
+    card.appendChild(textCard);
 
-    const textSection = document.createElement('h1');
-    textSection.style.fontSize = '2.5rem';
-    textSection.style.fontWeight = '800';
-    textSection.style.textShadow = '2px 3px 2px #000000';
-    textSection.style.margin = 'auto';
-    textSection.textContent = dynHeading.textContent;
-    section.appendChild(textSection);
+    /* image card Div */
 
-    const imgSectionDiv = document.createElement('div');
-    imgSectionDiv.style.margin = 'auto';
-    imgSectionDiv.style.width = '100%';
-    section.appendChild(imgSectionDiv);
-    imgSectionDiv.style.backgroundImage = blobDiv.style.backgroundImage;
-    imgSectionDiv.style.backgroundPosition = 'center';
-    imgSectionDiv.style.backgroundSize = '250px';
-    imgSectionDiv.style.backgroundRepeat = 'no-repeat';
+    const imgCardDiv = document.createElement('div');
+    imgCardDiv.style.margin = 'auto';
+    imgCardDiv.style.width = '100%';
+    card.appendChild(imgCardDiv);
+    imgCardDiv.style.backgroundImage = previewImageDiv.style.backgroundImage;
+    imgCardDiv.style.backgroundPosition = 'center';
+    imgCardDiv.style.backgroundSize = '250px';
+    imgCardDiv.style.backgroundRepeat = 'no-repeat';
 
+    /* preview image shot */
 
-
-
-
-    const imgSection = document.createElement('img');
-    imgSection.src = imgs.src;
-    imgSection.style.width = '150px';
-    imgSection.style.height = '150px';
-    imgSection.style.margin = '23%';
-
-    imgSection.style.objectFit = 'contain';
-    imgSectionDiv.appendChild(imgSection);
+    const imgCard = document.createElement('img');
+    imgCard.src = previewImage.src;
+    imgCard.style.width = '150px';
+    imgCard.style.height = '150px';
+    imgCard.style.margin = '23%';
+    imgCard.style.objectFit = 'contain';
+    imgCardDiv.appendChild(imgCard);
 
 }))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* footer  */
 
-const foot = document.createElement('footer');
+const footer = document.createElement('footer');
 
-root.appendChild(foot);
-foot.style.display='flex';
-foot.style.flexWrap = 'wrap';
-foot.style.justifyContent= 'center';
-foot.style.paddingBottom = '15px';
+/* FOOTER STYLING */
+
+root.appendChild(footer);
+Object.assign(footer.style,flexStyle);
+footer.style.justifyContent= 'center';
+footer.style.paddingBottom = '15px';
+const footerStyle = {
+    paddingLeft: '10px',
+    color: 'black',
+    textDecoration: 'none',
+};
+
+/* footer links */
 
 const pheart = document.createElement('p');
 pheart.textContent = "🖤 Credits: ";
-foot.appendChild(pheart);
+footer.appendChild(pheart);
 
 const aPolaroid = document.createElement('a');
-aPolaroid.style.paddingLeft = '10px';
-aPolaroid.style.color = 'black';
+Object.assign(aPolaroid.style,footerStyle);
 
 const aFallGuy = document.createElement('a');
-aFallGuy.style.paddingLeft = '10px';
-aFallGuy.style.color = 'black';
+Object.assign(aFallGuy.style,footerStyle);
 
 const aTv = document.createElement('a');
-aTv.style.paddingLeft = '10px';
-aTv.style.color = 'black';
+Object.assign(aTv.style,footerStyle);
 
 const aRadio = document.createElement('a');
-aRadio.style.paddingLeft = '10px';
-aRadio.style.color = 'black';
+Object.assign(aRadio.style,footerStyle);
 
 const aTraitor = document.createElement('a');
-aTraitor.style.paddingLeft = '10px';
-aTraitor.style.color = 'black';
+Object.assign(aTraitor.style,footerStyle);
  
 aPolaroid.textContent = 'Polaroid';
 aFallGuy.textContent = 'Fall Guy';
@@ -598,102 +559,58 @@ aTv.textContent = 'TV';
 aRadio.textContent = 'Radio';
 aTraitor.textContent = 'Traitor';
 
-aTraitor.style.textDecoration = "none";
-aFallGuy.style.textDecoration = "none";
-aTv.style.textDecoration = "none";
-aRadio.style.textDecoration = "none";
-aPolaroid.style.textDecoration = "none";
-
 aPolaroid.href = "#";
 aTv.href = "#";
 aTraitor.href = "#";
 aRadio.href = "#";
 aFallGuy.href = "#";
 
-
-foot.appendChild(aPolaroid);
-foot.appendChild(aTv);
-foot.appendChild(aFallGuy);
-foot.appendChild(aRadio);
-foot.appendChild(aTraitor);
-
-
-
-
-
+footer.appendChild(aPolaroid);
+footer.appendChild(aTv);
+footer.appendChild(aFallGuy);
+footer.appendChild(aRadio);
+footer.appendChild(aTraitor);
 
 /* blob nope function */
 
-
-
 const blobChange = () => {
-    if(blob.checked)
-    {
-
-        blobDiv.style.backgroundImage = "url('./assets/images/blob.png')";
-        blobDiv.style.backgroundSize = '250px';
-        blobDiv.style.backgroundRepeat = 'no-repeat';
-        imgs.style.width = '150px';
-        imgs.style.height = '150px';
-        imgs.style.margin = '20%';
-        console.log('blob here');
-
+    if(blob.checked){
+        previewImageDiv.style.backgroundImage = "url('./assets/images/blob.png')";
+        previewImageDiv.style.backgroundSize = '250px';
+        previewImageDiv.style.backgroundRepeat = 'no-repeat';
+        previewImage.style.width = '150px';
+        previewImage.style.height = '150px';
+        previewImage.style.margin = '20%';
     }
 }
 blob.onchange = blobChange;
-
-
 const nopeDefault = () => {
-
-    if(nope.checked)
-    {
-        blobDiv.style.backgroundImage = 'none';
-        imgs.style.width = '150px';
-        imgs.style.height = '150px';
-        imgs.style.margin = 'auto';
-        imgs.style.objectFit = 'contain';
-
-    }
-
+    if(nope.checked){
+        previewImageDiv.style.backgroundImage = 'none';
+        previewImage.style.width = '150px';
+        previewImage.style.height = '150px';
+        previewImage.style.margin = 'auto';
+        previewImage.style.objectFit = 'contain';
+     }
 
 }
-
-
-
-
-
 nope.onchange = nopeDefault;
-
-
-
 /* for ipad view */
-
 const ipadView = window.matchMedia("(max-width: 768px)")
-
 function ipadViewChange(){
-    dynHeading.style.fontSize = '2.5rem';
-    dynHeading.style.fontWeight = '700';
-    dynHeading.style.textShadow = "2px 3px 2px #000000";
+    previewText.style.fontSize = '2.5rem';
+    previewText.style.fontWeight = '700';
+    previewText.style.textShadow = "2px 3px 2px #000000";
   }
- 
-  ipadView.addEventListener('change',ipadViewChange);
-
-
-
-
-
-  const mobileView = window.matchMedia("(max-width: 480px)")
-
-
-  function mobileViewChange(){
+ ipadView.addEventListener('change',ipadViewChange);
+ const mobileView = window.matchMedia("(max-width: 480px)")
+ function mobileViewChange(){
       if(mobileView.matches){
-      rightDiv.style.margin = 'auto';
-      rightDiv.style.marginTop = '40px';
-      dynHeading.style.fontSize = '2.5rem';
-      dynHeading.style.fontWeight = '700';
-      dynHeading.style.textShadow = "2px 3px 2px #000000";
+      preview.style.margin = 'auto';
+      preview.style.marginTop = '40px';
+      previewText.style.fontSize = '2.5rem';
+      previewText.style.fontWeight = '700';
+      previewText.style.textShadow = "2px 3px 2px #000000";
       }
-    
-  }
-
-  mobileView.addEventListener('change',mobileViewChange);
+    }
+ mobileView.addEventListener('change',mobileViewChange);
