@@ -39,24 +39,27 @@ const pOne = document.createElement('p');
 pOne.textContent = "Sizzle your life";
 divMain.appendChild(pOne);
 pOne.style.fontSize = '2.5rem';
-pOne.style.fontWeight = '100';
-pOne.style.position = 'relative';
-pOne.style.top = '2px';
+// pOne.style.fontWeight = '100';
+// pOne.style.position = 'relative';
+// pOne.style.top = '2px';
 
 const hOne = document.createElement('h2');
 hOne.textContent = "Make a Card";
 hOne.style.fontSize = '4.5rem';
-hOne.style.position = 'relative';
-hOne.style.top = '5%';
+// hOne.style.position = 'relative';
+// hOne.style.top = '5%';
 hOne.style.fontWeight = '700';
+hOne.style.marginTop = '25px';
 divMain.appendChild(hOne);
 
 
 const divOne = document.createElement('div');
 divOne.style.cssText = "display: flex;";
 divMain.appendChild(divOne);
-divOne.style.position = 'relative';
-divOne.style.top = '20%';
+divOne.style.marginTop = '50px';
+divOne.style.flexWrap = 'wrap';
+// divOne.style.position = 'relative';
+// divOne.style.top = '20%';
 
 
 /* adding set of buttons  for div one*/
@@ -128,9 +131,11 @@ divOne.appendChild(radio);
 const divTwo = document.createElement('div');
 divTwo.style.cssText = "display:flex;";
 divMain.appendChild(divTwo);
-
-divTwo.style.position = 'relative';
-divTwo.style.top = '25%';
+divTwo.style.flexWrap= 'wrap';
+divTwo.style.height = 'auto';
+// divTwo.style.position = 'relative';
+// divTwo.style.top = '25%';
+divTwo.style.marginTop = '20px';
 
 const inp = document.createElement("Input");
 inp.setAttribute("type","text");
@@ -280,8 +285,9 @@ radioDiv.style.backgroundColor = 'black';
  camera.style.backgroundRepeat = 'no-repeat';
  camera.style.border = '2px solid black';
  camera.style.boxShadow = "3px 4px 3px #000000";
- camera.style.position = 'relative';
- camera.style.top = '30%';
+ camera.style.marginTop = '40px'
+//  camera.style.position = 'relative';
+//  camera.style.top = '30%';
  camera.style.borderRadius = '5px';
  
 
@@ -319,12 +325,14 @@ divRoot.appendChild(rightDiv);
   /* div for image */
  const blobDiv = document.createElement('div');
  rightDiv.appendChild(blobDiv);
-  blobDiv.style.position = 'relative';
-  blobDiv.style.top = '5%'
+//   blobDiv.style.position = 'relative';
+//   blobDiv.style.top = '5%'
+blobDiv.style.margintop = '25px';
   const imgDiv = document.createElement('div');
   imgDiv.style.width = '250px';
   imgDiv.style.height = '250px';
   imgDiv.style.display = 'flex';
+  imgDiv.style.flexWrap = 'wrap';
   imgDiv.style.border = 'none';
   blobDiv.appendChild(imgDiv);
 
