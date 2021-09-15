@@ -106,7 +106,7 @@ const imageButtonStyle = {
     borderRadius: '10px',
     color: 'black',
     border: '2px solid black',
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     boxShadow: '3px 4px 3px #000000',
 };
 
@@ -163,6 +163,7 @@ textInput.style.color = 'white';
 textInput.style.backgroundColor = 'black';
 textInput.style.border = '2px solid black';
 textInput.style.boxShadow = "3px 4px 3px #000000";
+textInput.style.outline = 'none';
 textInput.setAttribute("placeHolder","Name Your Bling!");
 
 /* append textInput as inputDiv's child */
@@ -181,6 +182,7 @@ bgSelector.style.margin = '10px';
 bgSelector.style.borderRadius = '10px';
 bgSelector.style.color = 'white';
 bgSelector.style.backgroundColor = 'black';
+bgSelector.style.outline = 'none';
 bgSelector.style.border = '2px solid black';
 bgSelector.style.boxShadow = "3px 4px 3px #000000";
 
@@ -300,7 +302,7 @@ radioDiv.style.backgroundColor = 'black';
  camera.style.height = '20px';
  camera.style.padding = '15px';
  camera.style.margin = '10px';
- camera.style.backgroundColor = 'white';
+ camera.style.backgroundColor = 'transparent';
  camera.style.backgroundSize = '20px';
  camera.style.backgroundRepeat = 'no-repeat';
  camera.style.border = '2px solid black';
@@ -375,7 +377,7 @@ const buttonList = [polaroid,tv,traitor,radio,fallGuy];
 function buttonColor(buttonObj){
     for(let button of buttonList){
         if(button != buttonObj){
-            button.style.backgroundColor = 'white';
+            button.style.backgroundColor = 'transparent';
             button.style.color = 'black';
         }
         else{
@@ -435,6 +437,7 @@ cardDiv.style.display = 'none';
 
 
 camera.addEventListener("click",(event=>{
+
     cardDiv.style.display = 'flex';
     const card = document.createElement('div');
     card.style.margin = '5px';
