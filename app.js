@@ -17,7 +17,7 @@ bling.textContent = "BLING!";
 
 bling.style.textAlign = 'center';
 bling.style.fontWeight = 'bold';
-bling.style.textShadow = '2px 1px #FF6347';
+bling.style.textShadow = '3px 3px 3px #FF9F33';
 bling.style.fontSize = '2rem';
 bling.style.padding = '2%';
 
@@ -106,8 +106,9 @@ const imageButtonStyle = {
     borderRadius: '10px',
     color: 'black',
     border: '2px solid black',
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     boxShadow: '3px 4px 3px #000000',
+    cursor: 'pointer',
 };
 
 /* image buttons -> polaroid, tv, traitor, fall Guy, radio */
@@ -163,6 +164,7 @@ textInput.style.color = 'white';
 textInput.style.backgroundColor = 'black';
 textInput.style.border = '2px solid black';
 textInput.style.boxShadow = "3px 4px 3px #000000";
+textInput.style.outline = 'none';
 textInput.setAttribute("placeHolder","Name Your Bling!");
 
 /* append textInput as inputDiv's child */
@@ -181,6 +183,7 @@ bgSelector.style.margin = '10px';
 bgSelector.style.borderRadius = '10px';
 bgSelector.style.color = 'white';
 bgSelector.style.backgroundColor = 'black';
+bgSelector.style.outline = 'none';
 bgSelector.style.border = '2px solid black';
 bgSelector.style.boxShadow = "3px 4px 3px #000000";
 
@@ -296,11 +299,12 @@ radioDiv.style.backgroundColor = 'black';
 
  camera.style.backgroundImage = "url('./assets/images/camera.png')";
  camera.style.backgroundPosition = 'center';
- camera.style.width = '20px';
- camera.style.height = '20px';
+ camera.style.width = '45px';
+ camera.style.height = '45px';
  camera.style.padding = '15px';
+ camera.style.cursor = 'pointer';
  camera.style.margin = '10px';
- camera.style.backgroundColor = 'white';
+ camera.style.backgroundColor = 'transparent';
  camera.style.backgroundSize = '20px';
  camera.style.backgroundRepeat = 'no-repeat';
  camera.style.border = '2px solid black';
@@ -324,9 +328,9 @@ mainDiv.appendChild(preview);
 /* preview Text */
 
 const previewText = document.createElement('h1');
- previewText.style.fontSize = '3rem';
- previewText.style.fontWeight = '800';
- previewText.style.textShadow = "2px 3px 2px #000000";
+ previewText.style.fontSize = '3.5rem';
+ previewText.style.fontWeight = 'bold';
+ previewText.style.textShadow = "2px 2px 2px #000000";
  previewText.style.textAlign = 'center';
 
  /* add preview Text as preview's child */
@@ -375,7 +379,7 @@ const buttonList = [polaroid,tv,traitor,radio,fallGuy];
 function buttonColor(buttonObj){
     for(let button of buttonList){
         if(button != buttonObj){
-            button.style.backgroundColor = 'white';
+            button.style.backgroundColor = 'transparent';
             button.style.color = 'black';
         }
         else{
@@ -435,6 +439,9 @@ cardDiv.style.display = 'none';
 
 
 camera.addEventListener("click",(event=>{
+    camera.style.backgroundColor = 'white';
+    setInterval(() => {camera.style.backgroundColor = "transparent"},250);
+
     cardDiv.style.display = 'flex';
     const card = document.createElement('div');
     card.style.margin = '5px';
@@ -486,9 +493,9 @@ camera.addEventListener("click",(event=>{
 
     /* card text styling */
 
-    textCard.style.fontSize = '2.5rem';
-    textCard.style.fontWeight = '800';
-    textCard.style.textShadow = '2px 3px 2px #000000';
+    textCard.style.fontSize = '3.5rem';
+    textCard.style.fontWeight = 'bold';
+    textCard.style.textShadow = "2px 2px 2px #000000";
     textCard.style.margin = 'auto';
     textCard.textContent = previewText.textContent;
     card.appendChild(textCard);
@@ -527,49 +534,46 @@ Object.assign(footer.style,flexStyle);
 footer.style.justifyContent= 'center';
 footer.style.paddingBottom = '15px';
 const footerStyle = {
-    paddingLeft: '10px',
+    marginLeft: '10px',
     color: 'black',
+    fontWeight: '550',
     textDecoration: 'none',
 };
 
 /* footer links */
 
+
 const pheart = document.createElement('p');
 pheart.textContent = "🖤 Credits: ";
+pheart.style.fontWeight = '550';
 footer.appendChild(pheart);
 
+
+
 const aPolaroid = document.createElement('a');
-Object.assign(aPolaroid.style,footerStyle);
-
 const aFallGuy = document.createElement('a');
-Object.assign(aFallGuy.style,footerStyle);
-
 const aTv = document.createElement('a');
-Object.assign(aTv.style,footerStyle);
-
 const aRadio = document.createElement('a');
-Object.assign(aRadio.style,footerStyle);
-
 const aTraitor = document.createElement('a');
-Object.assign(aTraitor.style,footerStyle);
- 
+
 aPolaroid.textContent = 'Polaroid';
 aFallGuy.textContent = 'Fall Guy';
 aTv.textContent = 'TV';
 aRadio.textContent = 'Radio';
 aTraitor.textContent = 'Traitor';
 
-aPolaroid.href = "#";
-aTv.href = "#";
-aTraitor.href = "#";
-aRadio.href = "#";
-aFallGuy.href = "#";
-
-footer.appendChild(aPolaroid);
-footer.appendChild(aTv);
-footer.appendChild(aFallGuy);
-footer.appendChild(aRadio);
-footer.appendChild(aTraitor);
+ const footerLinks = [aPolaroid,aFallGuy,aTv,aRadio,aTraitor]
+ for(let link of footerLinks){
+    Object.assign(link.style,footerStyle);
+    link.href='#';
+    footer.appendChild(link);
+    link.addEventListener('mouseenter',()=>{
+        link.style.borderBottom = '2px solid black'
+    });
+    link.addEventListener('mouseleave',() => {
+        link.style.border = 'none'
+    });
+}
 
 /* blob nope function */
 
