@@ -159,10 +159,10 @@ selector.style.backgroundColor = 'black';
 selector.style.border = '2px solid black';
 selector.style.boxShadow = "3px 4px 3px #000000";
 divTwo.appendChild(selector);
-selector.addEventListener('click', (event)=>{
-    root.style.backgroundColor = "#FFFAFA";
-    document.body.style.backgroundColor = "#FFFAFA";
-})
+// selector.addEventListener('click', (event)=>{
+//     root.style.backgroundColor = "#FFFAFA";
+//     document.body.style.backgroundColor = "#FFFAFA";
+// })
 
 
 /* some set of color names and hex values for reference */
@@ -306,8 +306,8 @@ divRoot.appendChild(rightDiv);
 
 
  const dynHeading = document.createElement('h1');
- dynHeading.style.fontSize = '4.5rem';
- dynHeading.style.fontWeight = '900';
+ dynHeading.style.fontSize = '3rem';
+ dynHeading.style.fontWeight = '800';
  dynHeading.style.textShadow = "2px 3px 2px #000000";
  dynHeading.style.textAlign = 'center';
  rightDiv.appendChild(dynHeading);
