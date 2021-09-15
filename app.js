@@ -374,15 +374,18 @@ previewImage.style.display = 'none';
 imgDiv.appendChild(previewImage);
 
 /* buttonColor function changes clicked button's color */
+let click = 0;
 
 const buttonList = [polaroid,tv,traitor,radio,fallGuy];
 function buttonColor(buttonObj){
     for(let button of buttonList){
-        if(button != buttonObj){
+        if((button != buttonObj) || (click == 0)){
             button.style.backgroundColor = 'transparent';
             button.style.color = 'black';
+            console.log('no color');
         }
         else{
+            console.log('color')
             button.style.backgroundColor = 'black';
             button.style.color = 'white';
         }
@@ -392,29 +395,66 @@ function buttonColor(buttonObj){
 /* on click image buttons function */
 
 polaroid.addEventListener("click", (event) => {
+    click = (click == 0)?1:0;
+    if(click == 0){
+        previewImage.style.display = 'none';
+    }
+    else{
     previewImage.style.display = 'block';
+  
     previewImage.src = './assets/images/polaroid.png';
+    }
     buttonColor(polaroid)
+    
+    
 })
 fallGuy.addEventListener("click", (event) => {
+    click = (click == 0)?1:0;
+    if(click == 0){
+        previewImage.style.display = 'none';
+    }
+    else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/fall-guy-01.png';
+    }
     buttonColor(fallGuy);
+    
 })
 radio.addEventListener("click", (event) => {
+    click = (click == 0)?1:0;
+    if(click == 0){
+        previewImage.style.display = 'none';
+    }
+    else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/radio-02.png';
+    }
     buttonColor(radio);
+    
 })
 traitor.addEventListener("click", (event)=>{
+    click = (click == 0)?1:0;
+    if(click == 0){
+        previewImage.style.display = 'none';
+    }
+    else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/among-us.png';
+    }
     buttonColor(traitor);
+    
 })
 tv.addEventListener("click", (event)=>{
+    click = (click == 0)?1:0;
+    if(click == 0){
+        previewImage.style.display = 'none';
+    }
+    else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/tv.png';
+    }
     buttonColor(tv);
+    
 })
 
 /* cardDiv - div which contains preview screenshot  cards */
@@ -515,6 +555,7 @@ camera.addEventListener("click",(event=>{
 
     const imgCard = document.createElement('img');
     imgCard.src = previewImage.src;
+    imgCard.style.display = previewImage.style.display;
     imgCard.style.width = '150px';
     imgCard.style.height = '150px';
     imgCard.style.margin = '23%';
