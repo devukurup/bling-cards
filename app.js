@@ -532,15 +532,15 @@ camera.addEventListener("click",(event=>{
 
     close.style.backgroundImage = "url('./assets/images/icon_delete.png')";
     close.style.backgroundPosition = 'center';
-    close.style.width = '15px';
-    close.style.height = '15px';
+    close.style.width = '50px';
+    close.style.height = '50px';
     close.style.padding = '15px';
     close.style.margin = '10px';
     close.style.backgroundColor = 'transparent';
     close.style.border = 'none';
-    close.style.backgroundSize = '20px';
+    close.style.backgroundSize = '40px';
     close.style.backgroundRepeat = 'no-repeat';
-    close.style.float = 'right';
+    close.style.float = 'left';
 
     /* add event listener for close button */
 
@@ -569,6 +569,7 @@ camera.addEventListener("click",(event=>{
     const imgCardDiv = document.createElement('div');
     imgCardDiv.style.margin = 'auto';
     imgCardDiv.style.width = '100%';
+    imgCardDiv.style.height = '250px';
     card.appendChild(imgCardDiv);
     imgCardDiv.style.backgroundImage = previewImageDiv.style.backgroundImage;
     imgCardDiv.style.backgroundPosition = 'center';
@@ -580,9 +581,10 @@ camera.addEventListener("click",(event=>{
     const imgCard = document.createElement('img');
     imgCard.src = previewImage.src;
     imgCard.style.display = previewImage.style.display;
+    imgCardDiv.display = 'block'
     imgCard.style.width = '150px';
     imgCard.style.height = '150px';
-    imgCard.style.margin = '23%';
+    imgCard.style.margin = '22%';
     imgCard.style.objectFit = 'contain';
     imgCardDiv.appendChild(imgCard);
 
