@@ -375,6 +375,7 @@ imgDiv.appendChild(previewImage);
 
 /* buttonColor function changes clicked button's color */
 let click = 0;
+let prevImg = {};
 
 const buttonList = [polaroid,tv,traitor,radio,fallGuy];
 function buttonColor(buttonObj){
@@ -382,10 +383,8 @@ function buttonColor(buttonObj){
         if((button != buttonObj) || (click == 0)){
             button.style.backgroundColor = 'transparent';
             button.style.color = 'black';
-            console.log('no color');
         }
         else{
-            console.log('color')
             button.style.backgroundColor = 'black';
             button.style.color = 'white';
         }
@@ -395,6 +394,10 @@ function buttonColor(buttonObj){
 /* on click image buttons function */
 
 polaroid.addEventListener("click", (event) => {
+    if(prevImg!= polaroid)
+    {
+        click = 0;
+    }
     click = (click == 0)?1:0;
     if(click == 0){
         previewImage.style.display = 'none';
@@ -403,12 +406,17 @@ polaroid.addEventListener("click", (event) => {
     previewImage.style.display = 'block';
   
     previewImage.src = './assets/images/polaroid.png';
+    prevImg = polaroid;
     }
     buttonColor(polaroid)
     
     
 })
 fallGuy.addEventListener("click", (event) => {
+    if(prevImg!= fallGuy)
+    {
+        click = 0;
+    }
     click = (click == 0)?1:0;
     if(click == 0){
         previewImage.style.display = 'none';
@@ -416,11 +424,16 @@ fallGuy.addEventListener("click", (event) => {
     else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/fall-guy-01.png';
+    prevImg = fallGuy;
     }
     buttonColor(fallGuy);
     
 })
 radio.addEventListener("click", (event) => {
+    if(prevImg!= radio)
+    {
+        click = 0;
+    }
     click = (click == 0)?1:0;
     if(click == 0){
         previewImage.style.display = 'none';
@@ -428,11 +441,16 @@ radio.addEventListener("click", (event) => {
     else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/radio-02.png';
+    prevImg = radio;
     }
     buttonColor(radio);
     
 })
 traitor.addEventListener("click", (event)=>{
+    if(prevImg!= traitor)
+    {
+        click = 0;
+    }
     click = (click == 0)?1:0;
     if(click == 0){
         previewImage.style.display = 'none';
@@ -440,11 +458,16 @@ traitor.addEventListener("click", (event)=>{
     else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/among-us.png';
+    prevImg = traitor;
     }
     buttonColor(traitor);
     
 })
 tv.addEventListener("click", (event)=>{
+    if(prevImg!= tv)
+    {
+        click = 0;
+    }
     click = (click == 0)?1:0;
     if(click == 0){
         previewImage.style.display = 'none';
@@ -452,6 +475,7 @@ tv.addEventListener("click", (event)=>{
     else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/tv.png';
+    prevImg = tv;
     }
     buttonColor(tv);
     
