@@ -373,9 +373,10 @@ previewImage.style.margin = '20%';
 previewImage.style.display = 'none';
 imgDiv.appendChild(previewImage);
 
-/* buttonColor function changes clicked button's color */
+/* buttonColor function changes clicked button's color */ 
+/* click monitors the button clicks , previousImage monitors the previously displayed preview image */
 let click = 0;
-let prevImg = {};
+let previousImage = {};
 
 const buttonList = [polaroid,tv,traitor,radio,fallGuy];
 function buttonColor(buttonObj){
@@ -394,7 +395,7 @@ function buttonColor(buttonObj){
 /* on click image buttons function */
 
 polaroid.addEventListener("click", (event) => {
-    if(prevImg!= polaroid)
+    if(previousImage!= polaroid)
     {
         click = 0;
     }
@@ -406,14 +407,14 @@ polaroid.addEventListener("click", (event) => {
     previewImage.style.display = 'block';
   
     previewImage.src = './assets/images/polaroid.png';
-    prevImg = polaroid;
+    previousImage = polaroid;
     }
     buttonColor(polaroid)
     
     
 })
 fallGuy.addEventListener("click", (event) => {
-    if(prevImg!= fallGuy)
+    if(previousImage!= fallGuy)
     {
         click = 0;
     }
@@ -424,13 +425,13 @@ fallGuy.addEventListener("click", (event) => {
     else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/fall-guy-01.png';
-    prevImg = fallGuy;
+    previousImage = fallGuy;
     }
     buttonColor(fallGuy);
     
 })
 radio.addEventListener("click", (event) => {
-    if(prevImg!= radio)
+    if(previousImage!= radio)
     {
         click = 0;
     }
@@ -441,13 +442,13 @@ radio.addEventListener("click", (event) => {
     else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/radio-02.png';
-    prevImg = radio;
+    previousImage = radio;
     }
     buttonColor(radio);
     
 })
 traitor.addEventListener("click", (event)=>{
-    if(prevImg!= traitor)
+    if(previousImage!= traitor)
     {
         click = 0;
     }
@@ -458,13 +459,13 @@ traitor.addEventListener("click", (event)=>{
     else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/among-us.png';
-    prevImg = traitor;
+    previousImage = traitor;
     }
     buttonColor(traitor);
     
 })
 tv.addEventListener("click", (event)=>{
-    if(prevImg!= tv)
+    if(previousImage!= tv)
     {
         click = 0;
     }
@@ -475,7 +476,7 @@ tv.addEventListener("click", (event)=>{
     else{
     previewImage.style.display = 'block';
     previewImage.src = './assets/images/tv.png';
-    prevImg = tv;
+    previousImage = tv;
     }
     buttonColor(tv);
     
